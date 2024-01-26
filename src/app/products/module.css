@@ -1,0 +1,52 @@
+body {
+    padding: 0 20px;
+}
+
+.heading-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 120px;
+    align-items: center;
+}
+
+.productList {
+    padding: 20px;
+}
+
+.productItem {
+    display: flex;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.productThumbnail {
+    margin-right: 20px;
+}
+
+.productThumbnail img {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+}
+
+.productInfo {
+    flex-grow: 1;
+}
+
+.addButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.addButton:hover {
+    background-color: #45a049;
+}
