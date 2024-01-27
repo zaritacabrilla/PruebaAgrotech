@@ -53,7 +53,7 @@ export default function CreateProductPage() {
     return (
         <main>
             <div>
-                <h1>Crear Nuevo Producto</h1>
+                <h1 className='section-title'>Crear Nuevo Producto</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="formGroup">
                         <label htmlFor="title">Título:</label>

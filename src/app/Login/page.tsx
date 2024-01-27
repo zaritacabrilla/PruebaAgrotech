@@ -30,7 +30,7 @@ const LoginPage = () => {
     return (
         <div className="container">
             <form className="login-form" onSubmit={handleSubmit}>
-                <h1>Iniciar Sesión</h1>
+                <h1 className='title-login'>Iniciar sesión</h1>
                 <label htmlFor="username">Usuario</label>
                 <input
                     type="text"

@@ -4,11 +4,22 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import "./module.css";
 
-export default function UpdateProductPage({product: oldProduct}) {
+interface Product {
+    id: number;
+    title: string;
+    description: string;
+    price: number;
+}
+
+interface UpdateProductPageProps {
+    product: Product;
+}
+
+export default function UpdateProductPage({ product: oldProduct } : UpdateProductPageProps) {
     const [product, setProduct] = useState({
-        title: oldProduct.title,
-        description: oldProduct.description,
-        price: oldProduct.price,
+        title: oldProduct?.title || '',
+        description: oldProduct?.description || '',
+        price: oldProduct?.price || 0,
     });
 
     const router = useRouter();
@@ -53,7 +64,7 @@ export default function UpdateProductPage({product: oldProduct}) {
     return (
         <main>
             <div>
-                <h1>Crear Nuevo Producto</h1>
+                <h1 className='section-title'>Crear Nuevo Producto</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="formGroup">
                         <label htmlFor="title">Título:</label>

@@ -5,8 +5,16 @@ import "./module.css";
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
+interface Product {
+    id: number;
+    title: string;
+    description: string;
+    price: number;
+    thumbnail: string;
+}
+
 export default function ProductsPage() {
-    const [productData, setProductData] = useState([]);
+    const [productData, setProductData] = useState<Product[]>([]);
     const router = useRouter();
 
     const getServerSideProps = async () => {
@@ -14,14 +22,14 @@ export default function ProductsPage() {
         const res = await fetch('https://dummyjson.com/products');
         const data = await res.json();
         console.log("data" + JSON.stringify(data));
-        if (data.hasOwnProperty("products")) setProductData(data.products)
+        if (data.hasOwnProperty("products")) setProductData(data.products as Product[]);
     }
 
     useEffect(() => {
         getServerSideProps();
     }, []);
 
-    const navigateToEdit = (product) => {
+    const navigateToEdit = (product: Product) => {
         router.push('/Update');
     }
 
@@ -29,7 +37,7 @@ export default function ProductsPage() {
         <main>
             <div>
                 <div className='heading-page'>
-                    <h1>Productos</h1>
+                    <h1 className='section-title'>Productos</h1>
                     <Link href="/Create" className="addButton">
                         Agregar Producto
                     </Link>

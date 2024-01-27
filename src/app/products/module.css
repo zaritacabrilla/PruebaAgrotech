@@ -2,6 +2,10 @@ body {
     padding: 0 20px;
 }
 
+.section-title {
+    font-size: 3.5rem;
+}
+
 .heading-page {
     display: flex;
     flex-direction: row;
@@ -16,6 +20,8 @@ body {
 
 .productItem {
     display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 20px;
     border: 1px solid #ddd;
     padding: 10px;
@@ -49,4 +55,12 @@ body {
 
 .addButton:hover {
     background-color: #45a049;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px; /* Ancho fijo */
+    height: 40px;
 }
